@@ -1,0 +1,13 @@
+#loading packages
+library(dplyr)
+library(base)
+library(utils)
+library(data.table)
+
+#downloading the data
+download.data <- function () {
+  zip.url <- 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
+  filename <- 'dataset.zip'
+  download.file(zip.url, filename, method = 'curl')
+  unzip(filename)
+}
